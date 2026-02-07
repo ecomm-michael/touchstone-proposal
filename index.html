@@ -55,28 +55,40 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.65) 0%, rgba(26, 54, 93, 0.65) 100%), url('touchstone-bg.png');
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.85) 0%, rgba(10, 25, 47, 0.85) 100%), url('https://touchstoneclosing.com/wp-content/uploads/2025/11/celegration-extended.jpg');
             background-size: cover;
-            background-position: center top;
+            background-position: center center;
             color: var(--white);
             padding: 60px;
             position: relative;
             overflow: hidden;
         }
+
+        .cover-logos {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .cover-logo-img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+        }
         
-        /* Most Popular Badge (Hidden/Cutoff) */
+        /* Most Popular Badge (Pricing Card) */
         .popular-badge {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 15px;
+            right: 15px;
             background: var(--accent);
             color: var(--white);
-            padding: 15px 60px 15px 30px;
-            font-size: 12px;
-            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transform: rotate(45deg) translateX(30px) translateY(-20px);
             z-index: 10;
         }
         
@@ -453,7 +465,15 @@
             font-weight: 600;
         }
         
-        /* Technology */
+        /* Technology & Screenshot */
+        .site-screenshot {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            border: 1px solid var(--gray-200);
+        }
+
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -582,8 +602,10 @@
 
     <!-- Cover Page -->
     <div class="cover">
-        <div class="popular-badge">Most Popular</div>
-        <div class="cover-logo">▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰</div>
+        <div class="cover-logos">
+            <img src="https://touchstoneclosing.com/wp-content/uploads/2025/02/TouchstoneClosingLogoLight.png" alt="Touchstone Closing Logo" class="cover-logo-img">
+            <img src="https://touchstonelawoffices.com/wp-content/uploads/2025/02/Touchstone-Law-Offices.png" alt="Touchstone Law Logo" class="cover-logo-img">
+        </div>
         <h1>Digital Authority</h1>
         <p class="cover-subtitle">AI-Powered SEO & AEO for Legal & Closing Services</p>
         <p class="cover-tagline">"Your clients are searching differently. Being found means being optimized for machines that learn."</p>
@@ -664,6 +686,8 @@
                     <p><strong>Zero-Click Results:</strong> Featured snippets capture majority of attention</p>
                 </div>
             </div>
+
+            <img src="touchstone-bg.png" alt="Touchstone Closing Website Screenshot" class="site-screenshot">
         </div>
     </section>
 
@@ -814,6 +838,7 @@
                 
                 <!-- 12 Months - Featured -->
                 <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
                     <div class="pricing-header">
                         <h3>12-Month Plan</h3>
                         <div class="pricing-duration">Most Popular Choice</div>
