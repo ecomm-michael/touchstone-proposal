@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Dominance Proposal | Touchstone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #b7791f;
+            --accent-light: #d69e2e;
+            --white: #ffffff;
+            --gray-50: #f7fafc;
+            --gray-100: #edf2f7;
+            --gray-200: #e2e8f0;
+            --gray-600: #4a5568;
+            --gray-800: #1a202c;
+            --success: #276749;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-600);
+            line-height: 1.6;
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        /* Cover Page with Background */
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.75) 0%, rgba(44, 82, 130, 0.70) 100%);
+            background-blend-mode: overlay;
+            background-image: url('https://touchstoneclosing.com/wp-content/uploads/2023/12/Touchstone-Closing-Logo-Horizontal-scaled.jpg');
+            background-size: cover;
+            background-position: center center;
+            color: var(--white);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Most Popular Badge (Hidden/Cutoff) */
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: var(--white);
+            padding: 15px 60px 15px 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(45deg) translateX(30px) translateY(-20px);
+            z-index: 10;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Executive Summary */
+        .exec-summary {
+            background: var(--gray-50);
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .pillar {
+            text-align: center;
+            padding: 28px 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 22px;
+        }
+        
+        .pillar h4 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        
+        .pillar p {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 24px;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+        
+        /* Problem/Solution */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .highlight-box {
+            background: var(--gray-50);
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight-box h4 {
+            margin-bottom: 14px;
+        }
+        
+        /* Pricing Section */
+        .pricing-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.02);
+        }
+        
+        .pricing-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .pricing-header h3 {
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .pricing-duration {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        
+        .pricing-setup {
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .pricing-body {
+            padding: 28px;
+        }
+        
+        .pricing-includes {
+            margin-bottom: 24px;
+        }
+        
+        .pricing-includes h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: var(--gray-800);
+        }
+        
+        .pricing-includes ul {
+            list-style: none;
+        }
+        
+        .pricing-includes li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .pricing-includes li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-metrics {
+            background: var(--gray-50);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+        }
+        
+        .pricing-metrics h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            color: var(--gray-800);
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        
+        .metric-label {
+            color: var(--gray-600);
+        }
+        
+        .metric-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .pricing-ongoing {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px dashed var(--gray-200);
+        }
+        
+        .ongoing-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .ongoing-label {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+        
+        /* Pricing Summary */
+        .pricing-summary {
+            background: var(--gray-50);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 14px;
+        }
+        
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-row.highlight {
+            background: var(--primary);
+            color: var(--white);
+            margin: 0 -20px;
+            padding: 14px 20px;
+            border-bottom: none;
+        }
+        
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary);
+        }
+        
+        .summary-value {
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+        }
+        
+        .summary-row.highlight .summary-value {
+            font-size: 22px;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 50px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        
+        .timeline-phase {
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .timeline h4 {
+            font-size: 20px;
+            margin: 8px 0 12px;
+        }
+        
+        .timeline-deliverables {
+            background: var(--gray-50);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+        
+        .timeline-deliverables h5 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        
+        .deliverable-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .deliverable-item {
+            font-size: 13px;
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .deliverable-item::before {
+            content: '✓';
+            color: var(--success);
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        /* Technology */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        
+        .tech-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+        
+        .tech-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .tech-info h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+        
+        .tech-info p {
+            font-size: 13px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 40px;
+        }
+        
+        .cta-section h2 {
+            color: var(--white);
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+        
+        .cta-section p {
+            font-size: 17px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 44px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            margin-top: 56px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        
+        .contact-info strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-800);
+            color: var(--gray-400);
+            padding: 36px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+            
+            .cover {
+                min-height: 100vh;
+                page-break-after: always;
+            }
+            
+            section {
+                page-break-inside: avoid;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover">
+        <div class="popular-badge">Most Popular</div>
+        <div class="cover-logo">▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰</div>
+        <h1>Digital Authority</h1>
+        <p class="cover-subtitle">AI-Powered SEO & AEO for Legal & Closing Services</p>
+        <p class="cover-tagline">"Your clients are searching differently. Being found means being optimized for machines that learn."</p>
+        <div class="cover-divider"></div>
+        <p class="cover-meta">
+            Touchstone Closing & Touchstone Law Offices<br>
+            Strategic Proposal by ExecuServices LLC<br>
+            February 2026
+        </p>
+    </div>
+
+    <!-- Executive Summary -->
+    <section class="exec-summary">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Opportunity</h2>
+                <p>Strategic visibility for the AI age</p>
+            </div>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">🔍</div>
+                    <h4>AI Search Visibility</h4>
+                    <p>Content structured for ChatGPT, Claude, and AI assistants</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">📝</div>
+                    <h4>90 Blog Posts</h4>
+                    <p>30 for Law Offices, 60 for Closing Services</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">📱</div>
+                    <h4>810 Social Posts</h4>
+                    <p>9 posts per page driving traffic</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🤖</div>
+                    <h4>Custom AI Agents</h4>
+                    <p>Bots trained specifically on your business</p>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">67%</span>
+                    <span class="stat-label">Searches starting with AI assistants</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">400%</span>
+                    <span class="stat-label">Voice search growth since 2020</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">32%</span>
+                    <span class="stat-label">Clicks captured by featured snippets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Shift -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>The Shift in Search</h2>
+                <p>Traditional SEO isn't enough anymore</p>
+            </div>
+            
+            <div class="two-column">
+                <div>
+                    <h3>What's Changed</h3>
+                    <p style="margin-bottom: 18px;">Search engines have evolved into answer engines. AI assistants like ChatGPT, Claude, and Gemini now field millions of queries directly. Your potential clients are finding services differently than even two years ago.</p>
+                    <p>Being optimized for "Google" in 2026 means being optimized for machines that learn, not just index. Your content must speak to both humans and AI systems.</p>
+                </div>
+                <div class="highlight-box">
+                    <h4>The New Reality</h4>
+                    <p style="margin-bottom: 14px;"><strong>AI-First Search:</strong> Users ask questions, expect direct answers</p>
+                    <p style="margin-bottom: 14px;"><strong>Voice Dominance:</strong> "Near me" and conversational queries</p>
+                    <p><strong>Zero-Click Results:</strong> Featured snippets capture majority of attention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="exec-summary">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Approach: Agentic + Specialized</h2>
+                <p>We don't deploy generic SEO. We build custom systems for your business.</p>
+            </div>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">⚙️</div>
+                    <h4>Custom AI Agents</h4>
+                    <p>Bots trained on your data, optimized for your services</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">📝</div>
+                    <h4>Strategic Content</h4>
+                    <p>High-intent posts targeting closing and legal queries</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🔄</div>
+                    <h4>AI-Optimized Pages</h4>
+                    <p>Schema, markdown files, and sitemap optimization</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">📈</div>
+                    <h4>Ongoing Excellence</h4>
+                    <p>Monitoring, reporting, and continuous improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>The Technology</h2>
+                <p>Proprietary systems augmented with best-in-class tools</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🧠</div>
+                    <div class="tech-info">
+                        <h4>Custom AI Agents</h4>
+                        <p>Bots trained on Touchstone data for accurate, consistent responses</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔬</div>
+                    <div class="tech-info">
+                        <h4>Research Engine</h4>
+                        <p>Real-time SERP analysis and competitor monitoring</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📄</div>
+                    <div class="tech-info">
+                        <h4>AI Content Layer</h4>
+                        <p>Custom markdown files and structured data for every page</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <div class="tech-info">
+                        <h4>Monitoring Dashboard</h4>
+                        <p>Real-time tracking, monthly reporting, and alerts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment -->
+    <section class="exec-summary">
+        <div class="container">
+            <div class="section-header">
+                <h2>Investment Options</h2>
+                <p>Choose your timeline. We'll build your digital authority.</p>
+            </div>
+            
+            <div class="pricing-intro">
+                <p style="font-size: 15px; color: var(--gray-600);">
+                    <strong>One-time Setup ($3,750):</strong> Custom AI agent training, initial optimization, AI-specific markdown files, sitemap optimization, and technical foundation.
+                    <br><br>
+                    <strong>Content Package:</strong> 90 blog posts (30 Law + 60 Closing), 810 social posts (9 per page), all service pages optimized.
+                    <br><br>
+                    <strong>Ongoing:</strong> $1,250/month ongoing ($750 base + $500 backlink) optimization included throughout your plan and after — covers monitoring, reporting, 2 posts/month, and 18 social posts/month.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- 6 Months -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>6-Month Plan</h3>
+                        <div class="pricing-duration">Accelerated Growth</div>
+                    </div>
+                    <div class="pricing-setup">First Month: $8,000 (setup + content + ongoing)</div>
+                    <div class="pricing-body">
+                        <div class="pricing-summary">
+                            <div class="summary-row">
+                                <span>Monthly Rate</span>
+                                <span class="summary-value">$4,750/mo</span>
+                            </div>
+                            <div class="summary-row" style="font-size: 12px; color: var(--gray-600);">
+                                <span>$3,500 content + $750 ongoing (+$500 backlink)</span>
+                                <span></span>
+                            </div>
+                            <div class="summary-row highlight">
+                                <span>First Month (Setup + Content + Ongoing)</span>
+                                <span class="summary-value">$8,000</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total 6 Months</span>
+                                <span class="summary-value">$30,250</span>
+                            </div>
+                        </div>
+                        <div class="pricing-metrics">
+                            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: var(--gray-800);">Content Included</h4>
+                            <div class="metric-row">
+                                <span class="metric-label">Blog Posts</span>
+                                <span class="metric-value">90 total (30 law + 60 closing)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Social Posts</span>
+                                <span class="metric-value">810 (9 per page × 90 posts)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Pages Optimized</span>
+                                <span class="metric-value">All service pages + pillars</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Timeline</span>
+                                <span class="metric-value">Months 2-6 (Month 1 = setup)</span>
+                            </div>
+                        </div>
+                        <div class="pricing-ongoing">
+                            <div class="ongoing-amount">$750</div>
+                            <div class="ongoing-label">/month ongoing included &amp; after plan ends</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 12 Months - Featured -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>12-Month Plan</h3>
+                        <div class="pricing-duration">Most Popular Choice</div>
+                    </div>
+                    <div class="pricing-setup">First Month: $6,250 (setup + content + ongoing)</div>
+                    <div class="pricing-body">
+                        <div class="pricing-summary">
+                            <div class="summary-row">
+                                <span>Monthly Rate</span>
+                                <span class="summary-value">$3,000/mo</span>
+                            </div>
+                            <div class="summary-row" style="font-size: 12px; color: var(--gray-600);">
+                                <span>$1,750 content + $750 ongoing (+$500 backlink)</span>
+                                <span></span>
+                            </div>
+                            <div class="summary-row highlight">
+                                <span>First Month (Setup + Content + Ongoing)</span>
+                                <span class="summary-value">$6,250</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total 12 Months</span>
+                                <span class="summary-value">$33,000</span>
+                            </div>
+                        </div>
+                        <div class="pricing-metrics">
+                            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: var(--gray-800);">Content Included</h4>
+                            <div class="metric-row">
+                                <span class="metric-label">Blog Posts</span>
+                                <span class="metric-value">90 total (30 law + 60 closing)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Social Posts</span>
+                                <span class="metric-value">810 (9 per page × 90 posts)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Pages Optimized</span>
+                                <span class="metric-value">All service pages + pillars</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Timeline</span>
+                                <span class="metric-value">Months 2-12 (Month 1 = setup)</span>
+                            </div>
+                        </div>
+                        <div class="pricing-ongoing">
+                            <div class="ongoing-amount">$750</div>
+                            <div class="ongoing-label">/month ongoing included &amp; after plan ends</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 24 Months -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>24-Month Plan</h3>
+                        <div class="pricing-duration">Maximum Authority</div>
+                    </div>
+                    <div class="pricing-setup">First Month: $5,375 (setup + content + ongoing)</div>
+                    <div class="pricing-body">
+                        <div class="pricing-summary">
+                            <div class="summary-row">
+                                <span>Monthly Rate</span>
+                                <span class="summary-value">$2,125/mo</span>
+                            </div>
+                            <div class="summary-row" style="font-size: 12px; color: var(--gray-600);">
+                                <span>$875 content + $750 ongoing (+$500 backlink)</span>
+                                <span></span>
+                            </div>
+                            <div class="summary-row highlight">
+                                <span>First Month (Setup + Content + Ongoing)</span>
+                                <span class="summary-value">$5,375</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total 24 Months</span>
+                                <span class="summary-value">$42,000</span>
+                            </div>
+                        </div>
+                        <div class="pricing-metrics">
+                            <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: var(--gray-800);">Content Included</h4>
+                            <div class="metric-row">
+                                <span class="metric-label">Blog Posts</span>
+                                <span class="metric-value">90 total (30 law + 60 closing)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Social Posts</span>
+                                <span class="metric-value">810 (9 per page × 90 posts)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Pages Optimized</span>
+                                <span class="metric-value">All service pages + pillars</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Timeline</span>
+                                <span class="metric-value">Months 2-24 (Month 1 = setup)</span>
+                            </div>
+                        </div>
+                        <div class="pricing-ongoing">
+                            <div class="ongoing-amount">$750</div>
+                            <div class="ongoing-label">/month ongoing included &amp; after plan ends</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Timeline & Deliverables</h2>
+                <p>Based on our 12-month plan. Shorter plans accelerate content deployment.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-phase">Month 1 (Setup)</span>
+                    <h4>Foundation & Training</h4>
+                    <p>AI agent training, site audit, technical fixes, initial pillar page optimization, sitemap and schema setup.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Month 1 Deliverables</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">Complete site technical audit</div>
+                            <div class="deliverable-item">Core Web Vitals optimization</div>
+                            <div class="deliverable-item">AI agent training & setup</div>
+                            <div class="deliverable-item">5 pillar pages optimized</div>
+                            <div class="deliverable-item">Schema markup implementation</div>
+                            <div class="deliverable-item">AI markdown files (5 pages)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-phase">Months 2-4</span>
+                    <h4>Content Sprint 1: Mixed Deployment</h4>
+                    <p>13 blog posts per month (7 Closing + 3 Law + 3 pillar/supporting) with 9 social posts per article.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Months 2-4 Deliverables</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">39 blog posts (21 closing + 9 law + 9 supporting)</div>
+                            <div class="deliverable-item">351 social posts scheduled</div>
+                            <div class="deliverable-item">Rank tracking configured</div>
+                            <div class="deliverable-item">Weekly ranking reports</div>
+                            <div class="deliverable-item">Service pages optimized (both brands)</div>
+                            <div class="deliverable-item">AI markdown files deployed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-phase">Months 5-7</span>
+                    <h4>Content Sprint 2: Continued Mixed Deployment</h4>
+                    <p>13 blog posts per month (7 Closing + 3 Law + 3 pillar/supporting) building on Sprint 1 momentum.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Months 5-7 Deliverables</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">39 blog posts (21 closing + 9 law + 9 supporting)</div>
+                            <div class="deliverable-item">351 social posts scheduled</div>
+                            <div class="deliverable-item">Citation building begins</div>
+                            <div class="deliverable-item">Review generation campaign</div>
+                            <div class="deliverable-item">AI markdown files (continued)</div>
+                            <div class="deliverable-item">Mid-plan performance review</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-phase">Months 8-10</span>
+                    <h4>Content Sprint 3: Final Push &amp; Remaining Posts</h4>
+                    <p>Remaining 12 posts (4/month) plus 108 social posts, with authority building and refinement.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Months 8-10 Deliverables</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">12 blog posts (remaining mix)</div>
+                            <div class="deliverable-item">108 social posts scheduled</div>
+                            <div class="deliverable-item">Backlink acquisition strategy</div>
+                            <div class="deliverable-item">Content refreshes &amp; updates</div>
+                            <div class="deliverable-item">Competitor monitoring</div>
+                            <div class="deliverable-item">Quarterly strategy review</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-phase">Months 11-12</span>
+                    <h4>Authority Building &amp; Refinement</h4>
+                    <p>All 90 posts and 810 social posts deployed. Focus shifts to optimization, performance analysis, and transition to ongoing.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Months 11-12 Deliverables</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">Content performance audit</div>
+                            <div class="deliverable-item">Top-performing post optimization</div>
+                            <div class="deliverable-item">Backlink campaign continuation</div>
+                            <div class="deliverable-item">Full analytics report</div>
+                            <div class="deliverable-item">Strategy review &amp; roadmap</div>
+                            <div class="deliverable-item">Transition to ongoing plan</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-phase">Ongoing</span>
+                    <h4>Continuous Excellence</h4>
+                    <p>After your plan completes, we continue with 2 posts/month, monitoring, and optimization at $750/month.</p>
+                    <div class="timeline-deliverables">
+                        <h5>Ongoing Includes</h5>
+                        <div class="deliverable-list">
+                            <div class="deliverable-item">2 blog posts per month</div>
+                            <div class="deliverable-item">18 social posts per month</div>
+                            <div class="deliverable-item">Monthly performance report</div>
+                            <div class="deliverable-item">Ranking monitoring & alerts</div>
+                            <div class="deliverable-item">Technical optimization</div>
+                            <div class="deliverable-item">Content refreshes as needed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Commitment -->
+    <section>
+        <div class="container">
+            <div class="highlight-box" style="border-left-color: var(--primary);">
+                <h4 style="color: var(--primary);">Our Commitment to Transparency</h4>
+                <p style="margin-bottom: 16px;">We don't guarantee specific rankings or timeframe guarantees. SEO and AEO success depends on many factors including market competition, content quality, and algorithm changes.</p>
+                <p style="margin-bottom: 16px;"><strong>What we guarantee:</strong> Strategic execution, continuous optimization, transparent reporting, and dedicated partnership toward your visibility goals.</p>
+                <p>We measure success through <em>improved visibility metrics</em>, <em>organic traffic growth</em>, and <em>qualified lead generation</em>—not arbitrary ranking promises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Build Digital Authority?</h2>
+        <p>Let's discuss how strategic SEO and AEO can grow your practice.</p>
+        <a href="https://getwaas.io/meeting" class="cta-button">Schedule Your Discovery Call</a>
+        
+        <div class="contact-info">
+            <div>
+                <strong>ExecuServices LLC</strong>
+                getwaas.io
+            </div>
+            <div>
+                <strong>Contact</strong>
+                michael@execuservices.net
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 ExecuServices LLC. All rights reserved. | Digital Authority for Legal & Closing Services</p>
+    </footer>
+
+</body>
+</html>
